@@ -20,15 +20,11 @@ class App extends React.Component {
           <div className="tile is-2 notification is-warning">
             <p className="title">change dispenser</p>
 
-
           </div>
 
         </div>
 
-
       </div>
-
-
 
     );
   }

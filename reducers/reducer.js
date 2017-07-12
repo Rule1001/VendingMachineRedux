@@ -3,8 +3,9 @@ import initialState from '../dbUtils/data';
 
 
 export default function reducer(prevState = initialState, action) {
+    console.log(action)
     if (!action) return prevState;
-    if (!prevState.power) return prevState;
+    //if (!prevState.power) return prevState;
 
     if (action.type === types.INSERT_COIN) {
         const newState = Object.assign({}, prevState);
@@ -34,6 +35,7 @@ export default function reducer(prevState = initialState, action) {
             return a + b;
         }, 0).toFixed(2);
 
+        
         if (creditTotal >= newState.stock[action.code].price && newState.stock[action.code].quantity > 0) {
             let changeTotal = Math.round(creditTotal - newState.stock[action.code].price);
             newState.credit = [];
@@ -44,7 +46,7 @@ export default function reducer(prevState = initialState, action) {
             newState.displayMessage = 'Thank you! Please take your snack';
 
         }
-
+        console.log(newState)
         return newState;
     }
 
