@@ -66,6 +66,7 @@ describe('reducer', function () {
             expect(newState.productDispenser).to.equal('A2');
             expect(newState.dispenserDoorOpen).to.be.true;
             expect(newState.displayMessage).to.equal('Thank you! Please take your snack');
+            expect(newState.stock.A2.quantity).to.equal(9)
         });
         it('does not mutate the state', function () {
             const action = actions.releaseSnackAndChange('A2');

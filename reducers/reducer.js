@@ -1,34 +1,6 @@
 import * as types from '../actions/types';
+import initialState from '../dbUtils/data';
 
-const initialState = {
-    stock: {
-        'A1': {
-            name: 'Mars Bar',
-            quantity: 10,
-            stuck: false,
-            price: 0.85
-        },
-        'A2': {
-            name: 'Kettle Crisps',
-            quantity: 10,
-            stuck: false,
-            price: 0.85
-        }
-    },
-    credit: [0.2, 0.2, 0.05, 0.2, 0.2],
-    changeArea: [],
-    float: {
-        '1': 10,
-        '0.5': 10,
-        '0.1': 10
-    },
-    displayMessage: '',
-    selection: '',
-    productDispenser: 'A1',
-    changeDispenser: 0,
-    dispenserDoorOpen: false,
-    power: false
-};
 
 export function reducer(prevState = initialState, action) {
     if (!action) return prevState;
@@ -61,18 +33,15 @@ export function reducer(prevState = initialState, action) {
         let creditTotal = newState.credit.reduce((a, b) => {
             return a + b;
         }, 0).toFixed(2);
-        
+
         if (creditTotal >= newState.stock[action.code].price && newState.stock[action.code].quantity > 0) {
             let changeTotal = Math.round(creditTotal - newState.stock[action.code].price);
             newState.credit = [];
             newState.changeArea = changeTotal;
-            // update quantity
+            newState.stock[action.code].quantity -= 1;
             newState.productDispenser = action.code;
             newState.dispenserDoorOpen = true;
             newState.displayMessage = 'Thank you! Please take your snack';
-            console.log(changeTotal);
-            console.log(creditTotal);
-            console.log(newState.stock[action.code].price);
 
         }
 
