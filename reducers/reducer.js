@@ -2,7 +2,7 @@ import * as types from '../actions/types';
 import initialState from '../dbUtils/data';
 
 
-export function reducer(prevState = initialState, action) {
+export default function reducer(prevState = initialState, action) {
     if (!action) return prevState;
     if (!prevState.power) return prevState;
 

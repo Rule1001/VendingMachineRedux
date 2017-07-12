@@ -2,14 +2,35 @@ const initialState = {
     stock: {
         'A1': {
             name: 'Mars Bar',
-            url: '../assets/marsbar.jpg',
+            url: 'https://images-na.ssl-images-amazon.com/images/I/71NrROgheSL._SX522_.jpg',
             quantity: 10,
             stuck: false,
             price: 0.85
         },
         'A2': {
             name: 'Kettle Crisps',
-            url: '../assets/kettlechips.png',
+            url: 'http://www.kettlefoods.co.uk/media/dContent/368/homepagePackShot.png',
+            quantity: 10,
+            stuck: false,
+            price: 0.85
+        },
+        'A3': {
+            name: 'polo',
+            url: 'http://www.kettlefoods.co.uk/media/dContent/368/homepagePackShot.png',
+            quantity: 10,
+            stuck: false,
+            price: 0.85
+        },
+        'A4': {
+            name: 'maltesers',
+            url: 'http://www.kettlefoods.co.uk/media/dContent/368/homepagePackShot.png',
+            quantity: 10,
+            stuck: false,
+            price: 0.85
+        },
+        'A5': {
+            name: 'revells',
+            url: 'http://www.kettlefoods.co.uk/media/dContent/368/homepagePackShot.png',
             quantity: 10,
             stuck: false,
             price: 0.85
